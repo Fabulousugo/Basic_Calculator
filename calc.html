@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <div id="main">
+
+        <form name="form">
+            <input type="text" placeholder="0" name="calc" > <br>
+            <input type="button" value="1" onclick="form.calc.value +='1'">
+
+            
+            <input type="button" value="2" onclick="form.calc.value +='2'">
+
+            
+            <input type="button" value="3" onclick="form.calc.value +='3'">
+
+            
+            <input type="button" value="4" onclick="form.calc.value +='4'">
+
+            <br>
+            
+            <input type="button" value="5" onclick="form.calc.value +='5'">
+
+            <input type="button" value="6" onclick="form.calc.value +='6'">
+
+            
+
+            <input type="button" value="7" onclick="form.calc.value +='7'">
+
+            
+            <input type="button" value="8" onclick="form.calc.value +='8'">
+
+            <br>
+            <input type="button" value="9" onclick="form.calc.value +='9'">
+            
+            
+            <input type="button" value="0" onclick="form.calc.value +='0'">
+
+            <input type="button" value="+" onclick="add()">
+
+            
+            <input type="button" value="-" onclick="sub()">
+
+            <br>
+            
+            <input type="button" value="/" onclick="div()">
+
+            
+            <input type="button" value="x" onclick="mult()">
+            
+            
+            <input type="button" value="=" onclick="form.calc.value =eval(form.calc.value)">
+            
+            <input type="button" value="C" onclick="form.calc.value =''">
+        </form>
+    </div>
+
+    <script type="text/javascript">
+
+        function add(){
+
+            var formValue = form.calc.value;
+            var formValueLength = formValue.charAt(formValue.length -1);
+
+            if (formValueLength ==="+" || formValueLength ==="-" || formValueLength ==="*" || formValueLength ==="/"){
+
+                formValue = formValue.substring(0, formValue.length-1);
+
+            }
+                formValue +='+';
+                form.calc.value = formValue;
+
+
+        };
+        function sub(){
+
+            var formValue = form.calc.value;
+            var formValueLength = formValue.charAt(formValue.length -1);
+
+            if (formValueLength ==="+" || formValueLength ==="-" || formValueLength ==="*" || formValueLength ==="/"){
+
+                formValue = formValue.substring(0, formValue.length-1);
+
+            }
+                formValue +='-';
+                form.calc.value = formValue;
+        };
+
+        function mult(){
+
+            var formValue = form.calc.value;
+            var formValueLength = formValue.charAt(formValue.length -1);
+
+            if (formValueLength ==="+" || formValueLength ==="-" || formValueLength ==="*" || formValueLength ==="/"){
+
+                formValue = formValue.substring(0, formValue.length-1);
+
+            }
+                formValue +='*';
+                form.calc.value = formValue;
+        };
+
+        function div(){
+
+            var formValue = form.calc.value;
+            var formValueLength = formValue.charAt(formValue.length -1);
+
+            if (formValueLength ==="+" || formValueLength ==="-" || formValueLength ==="*" || formValueLength ==="/"){
+
+                formValue = formValue.substring(0, formValue.length-1);
+
+            }
+                formValue +='/';
+                form.calc.value = formValue;
+        }
+
+    </script>
+</body>
+</html>
